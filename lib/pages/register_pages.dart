@@ -1,21 +1,21 @@
-import 'package:chatbot/components/my_button.dart';
-import 'package:chatbot/components/my_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:chatbot/components/my_text_field.dart';
+import 'package:chatbot/components/my_button.dart';
 
-class LoginPage extends StatefulWidget {
-  final void Function()? onTap;
-  const LoginPage({super.key, this.onTap});
+class RegisterPage extends StatefulWidget {
+  final void Function()? ontap;
+  const RegisterPage({super.key, this.ontap});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  //textediting controller
+class _RegisterPageState extends State<RegisterPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final confirmedpassword = TextEditingController();
 
-  void signin() {}
+  void signup() {}
 
   @override
   Widget build(BuildContext context) {
@@ -31,38 +31,45 @@ class _LoginPageState extends State<LoginPage> {
                 //logo
                 SizedBox(height: 100),
                 Icon(Icons.message, size: 100),
-                // welcome back
+                // Register title
                 Text(
-                  'Welcome back',
+                  'Lets Register You',
                   style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 60),
+                SizedBox(height: 40),
                 // Email textfieled
                 MyTextField(
                   controller: emailController,
                   hintText: 'Email/Number',
                   obscureText: false,
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 20),
                 // Password textfieled
                 MyTextField(
                   controller: passwordController,
                   hintText: 'Password',
                   obscureText: true,
                 ),
+                SizedBox(height: 20),
+                //Confirmed Password textfieled
+                MyTextField(
+                  controller: confirmedpassword,
+                  hintText: 'Confirm Password',
+                  obscureText: true,
+                ),
                 // sign in button
-                SizedBox(height: 25),
-                MyButton(onTap: signin, text: 'Sign In'),
+                SizedBox(height: 20),
+                MyButton(onTap: signup, text: 'Sign up'),
                 // Register now
                 SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Not a member?'),
+                    Text('Already a member?'),
                     SizedBox(width: 4),
                     GestureDetector(
                       child: Text(
-                        'Register now',
+                        'Login now',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -74,5 +81,6 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+    ;
   }
 }

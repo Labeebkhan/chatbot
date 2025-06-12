@@ -1,3 +1,4 @@
+import 'package:chatbot/pages/register_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:chatbot/pages/login_page.dart';
 
@@ -10,6 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: LoginPage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: RegisterPage());
   }
 }
